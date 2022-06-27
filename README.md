@@ -1,4 +1,4 @@
-# flask
+# Example flask app
 
 ## Deploy
     oc new-project flask-stress
