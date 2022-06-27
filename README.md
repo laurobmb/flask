@@ -22,3 +22,9 @@
     oc -n flask-stress set probe deployment/flask-stress --liveness --initial-delay-seconds=10 --timeout-seconds=30 --get-url=http://:8080/health
     
     
+### STRESS TEST
+    
+    oc -n flask-stress set env deployment/flask-stress STRESS_MINS='1'
+
+    URL=`oc -n flask-stress get route -o jsonpath='{.items[*].spec.host}{"\n"}'`
+    curl -vk http://$URL/stress
