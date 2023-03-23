@@ -14,11 +14,11 @@ spec:
   strategy:
     type: Docker                      
     dockerStrategy:
-#      dockerfilePath: Dockerfile
-#      from:
-#        kind: ImageStreamTag
-#        namespace: openshift
-#        name: 'flask:latest'
+      dockerfilePath: Dockerfile
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: 'flask:latest'
   postCommit: {}
   source:
     type: Git

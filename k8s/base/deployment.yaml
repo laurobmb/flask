@@ -17,6 +17,8 @@ spec:
     spec:
       containers:
       - name: flask-container
+        securityContext:
+          runAsUser: 1000
         readinessProbe:
           failureThreshold: 3
           httpGet:
