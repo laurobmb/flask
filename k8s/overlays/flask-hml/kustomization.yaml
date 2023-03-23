@@ -21,7 +21,7 @@ commonLabels:
 images:
 - name: flaskimage
   newName: quay.io/lagomes/flask-app
-  newTag: 'ubiv2'
+  newTag: 'ubiv3'
 
 #patches:
 #- target:
