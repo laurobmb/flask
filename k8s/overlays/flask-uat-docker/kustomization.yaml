@@ -1,0 +1,27 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+#bases:
+#- ../../base
+
+nameSuffix: -docker
+
+namespace: flask-docker
+
+resources:
+- Namespace.yaml
+- ImageStream.yaml
+- BuildConfig.yaml
+- DeploymentConfig.yaml
+- Route.yaml
+- Service.yaml
+
+commonLabels:
+  app: flask
+
+images:
+- name: flaskimage
+  newName: quay.io/lagomes/flask-js-sample-project
+  newTag: 'flask-update'
+
