@@ -14,13 +14,12 @@
 FROM alpine:latest
 RUN apk add --no-cache py3-pip \
     && pip3 install --upgrade pip
-
+USER 0
 WORKDIR /app
 COPY . /app
-
+RUN chown -R 1001:0 ./
+USER 1001
 RUN pip3 --no-cache-dir install -r requirements.txt
-
 EXPOSE 8080
-
 ENTRYPOINT ["python3"]
 CMD ["app.py"]

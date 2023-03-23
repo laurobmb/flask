@@ -23,8 +23,8 @@ spec:
   source:
     type: Git
     git:
-      uri: 'https://github.com/laurobmb/flask-Js-Sample-Project'
-      ref: flask-redhat
+      uri: 'https://github.com/laurobmb/flask'
+      ref: main
   triggers:
     - type: GitHub
       github:

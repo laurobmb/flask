@@ -22,6 +22,6 @@ commonLabels:
 
 images:
 - name: flaskimage
-  newName: quay.io/lagomes/flask-js-sample-project
-  newTag: 'flask-update'
+  newName: quay.io/lagomes/flask-app
+  newTag: 'alpinev1'
 
