@@ -45,7 +45,8 @@ spec:
             memory: "128Mi"
             cpu: 500m
         image: flaskimage
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
+        #imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
   minReadySeconds: 5
