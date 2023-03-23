@@ -14,7 +14,7 @@ spec:
   strategy:
     type: Docker                      
     dockerStrategy:
-      dockerfilePath: Dockerfile
+#      dockerfilePath: Dockerfile
       from:
         kind: ImageStreamTag
         namespace: openshift
