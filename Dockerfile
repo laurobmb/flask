@@ -3,7 +3,7 @@ FROM registry.access.redhat.com/ubi8/python-38
 LABEL maintainer="Lauro Gomes <laurobmb@gmail.com>"
 USER 0
 WORKDIR /app
-COPY ["app.py", "requirements.txt", "."]
+COPY . .
 RUN chown -R 1001:0 ./
 USER 1001
 RUN python -m pip install -r requirements.txt 
