@@ -8,4 +8,4 @@ RUN chown -R 1001:0 ./
 USER 1001
 RUN python -m pip install -r requirements.txt 
 EXPOSE 8080
-CMD [ "python", "app.py" ]
+CMD python app.py
