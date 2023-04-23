@@ -20,8 +20,8 @@ resources:
 commonLabels:
   app: flask
 
-images:
-- name: flaskimage
-  newName: quay.io/lagomes/flask-js-sample-project
-  newTag: 'flask-update'
+#images:
+#- name: flaskimage
+#  newName: quay.io/lagomes/flask-js-sample-project
+#  newTag: 'flask-update'
 

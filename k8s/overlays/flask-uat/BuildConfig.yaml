@@ -17,13 +17,13 @@ spec:
       from:
         kind: ImageStreamTag
         namespace: openshift
-        name: 'flask:latest'
+        name: 'python:3.8'
   postCommit: {}
   source:
     type: Git
     git:
-      uri: 'https://github.com/laurobmb/flask-Js-Sample-Project'
-      ref: flask-redhat
+      uri: 'https://github.com/laurobmb/flask'
+      ref: openshift
   triggers:
     - type: GitHub
       github:
