@@ -9,7 +9,7 @@ spec:
   host: ""
   to:
     kind: Service
-    name: flask-service-uat
+    name: flask-service-docker
     weight: 100
   port:
     targetPort: 8080

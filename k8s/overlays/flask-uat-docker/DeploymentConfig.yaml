@@ -23,7 +23,7 @@ spec:
         app: flask
     spec:
       containers:
-      - image: flask-uat:latest
+      - image: flask-docker:latest
         imagePullPolicy: IfNotPresent
         name: flask-app
         ports:
@@ -43,5 +43,5 @@ spec:
       - flask-app
       from:
         kind: ImageStreamTag
-        name: flask-uat:latest
+        name: flask-docker:latest
     type: ImageChange
