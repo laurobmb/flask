@@ -3,7 +3,7 @@ apiVersion: build.openshift.io/v1
 metadata:
   name: flask
 spec:
-  flaskSelector: {}
+#  flaskSelector: {}
   output:
     to:
       kind: ImageStreamTag
@@ -15,14 +15,14 @@ spec:
     type: Docker                      
     dockerStrategy:
       dockerfilePath: Dockerfile
-#      from:
-#        kind: ImageStreamTag
-#        namespace: openshift
-#        name: 'flask:latest'
+      from:
+        kind: ImageStreamTag
+        namespace: flask-docker
+        name: 'flask-docker:latest'
   postCommit: {}
   source:
     type: Git
     git:
       uri: 'https://github.com/laurobmb/flask'
-      ref: openshift
-      contextDir: /
+      ref: openshift-docker
+#      contextDir: /

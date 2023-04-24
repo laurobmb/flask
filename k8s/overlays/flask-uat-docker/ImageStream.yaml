@@ -9,6 +9,7 @@ spec:
   - name: latest
     from:
       kind: DockerImage
-      name: alpine:latest
+      #name: alpine:latest
+      name: python:3.8
     referencePolicy:
       type: Source
