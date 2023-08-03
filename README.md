@@ -24,7 +24,6 @@
     URL=`oc -n flask-stress get route -o jsonpath='{.items[*].spec.host}{"\n"}'`
     curl -vk http://$URL/health
 
-
 ### Check message
 
 #### Get vaviable result    
