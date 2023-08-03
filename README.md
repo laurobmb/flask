@@ -23,3 +23,21 @@
 ### Check health
     URL=`oc -n flask-stress get route -o jsonpath='{.items[*].spec.host}{"\n"}'`
     curl -vk http://$URL/health
+
+
+### Check message
+
+#### Get vaviable result    
+    curl http://flask-router-uat-flask-uat.apps.acs.acm-lagomes.rhbr-lab.com/msg
+#### Update vaviable value
+    oc set env dc/flask-uat MESSAGE="openshift 4.11"
+
+#### Create secret
+    oc create secret generic flask-uat --from-literal MESSAGE="openshift 4.12"    
+#### Update vaviable value
+    oc set env --from=secret/flask-uat dc/flask-uat
+
+#### Create Configmap
+    oc create configmap flask-uat --from-literal=MESSAGE="openshift 4.3"
+#### Update vaviable value
+    oc set env --from=configmap/flask-uat dc/flask-uat
