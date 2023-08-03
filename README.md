@@ -27,7 +27,7 @@
 ### Check message
 
 #### Get vaviable result    
-    curl http://flask-router-uat-flask-uat.apps.acs.acm-lagomes.rhbr-lab.com/msg
+    curl http://<ROUTER LINK>/msg
 #### Update vaviable value
     oc set env dc/flask-uat MESSAGE="openshift 4.11"
 
