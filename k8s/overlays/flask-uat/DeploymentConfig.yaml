@@ -26,6 +26,9 @@ spec:
       - image: flask-uat:latest
         imagePullPolicy: IfNotPresent
         name: flask-app
+        env:
+        - name: MESSAGE
+          value: 'Red Hat Openshift COntainer Platform 4.10\n'
         ports:
         - containerPort: 8080
           protocol: TCP

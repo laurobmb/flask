@@ -6,7 +6,7 @@ import os
 from flask import Flask,render_template
 app = Flask(__name__)
 
-os.environ['MESSAGE'] = 'Red Hat Openshift COntainer Platform 4.10\n'
+MESSAGE = os.environ['MESSAGE']
 
 def f(x):
     set_time = os.environ['STRESS_MINS']
