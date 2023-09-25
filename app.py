@@ -32,6 +32,17 @@ def msg():
     return MESSAGE
 
 
+@app.route('/secret')
+def secret():
+    return SECRET
+
+
+@app.route('/configmap')
+def configmap():
+    return render_template('configmap.html')
+
+
+
 @app.route('/stress')
 def stress():
     processes = cpu_count()
