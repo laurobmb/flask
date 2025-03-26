@@ -18,7 +18,7 @@ resources:
 images:
 - name: flaskimage
   newName: quay.io/lagomes/flask-app
-  newTag: alpinev1
+  newTag: v1
 labels:
 - includeSelectors: true
   pairs:
