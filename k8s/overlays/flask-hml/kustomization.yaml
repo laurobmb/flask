@@ -1,9 +1,6 @@
----
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-bases:
-- ../../base
 
 nameSuffix: -hml
 
@@ -14,22 +11,18 @@ resources:
 - hpa.yaml
 - ns.yaml
 - rq-flask.yaml
-
-commonLabels:
-  env: flaskhml
+- ../../base
+- rolebinding.yaml
+- sa.yaml
 
 images:
 - name: flaskimage
   newName: quay.io/lagomes/flask-app
-  newTag: 'alpinev1'
+  newTag: alpinev1
+labels:
+- includeSelectors: true
+  pairs:
+    env: flaskhml
 
-#patches:
-#- target:
-#    version: v1
-#    group: route.openshift.io
-#    kind: Route
-#    name: flask-router
-#  patch: |-
-#    - op: replace
-#      path: /spec/to/name
-#      value: "flask-service-hml"
+patches:
+- path: patch-deployment.yaml
