@@ -42,7 +42,6 @@ def configmap():
     return render_template('configmap.html')
 
 
-
 @app.route('/stress')
 def stress():
     processes = cpu_count()
@@ -52,9 +51,5 @@ def stress():
 
 
 if __name__ == '__main__':
-    app.run(
-        host='0.0.0.0', 
-        debug=True, 
-        port=8080
-        )
+    app.run( host='0.0.0.0', debug=True, port=8080 )
 

@@ -1,25 +1,28 @@
-#FROM python:3.10-slim
-#FROM registry.access.redhat.com/ubi8/python-38
-#LABEL maintainer="Lauro Gomes <laurobmb@gmail.com>"
-#USER 0
-#WORKDIR /app
-#COPY . .
-#RUN chown -R 1001:0 ./
-#USER 1001
-#RUN python -m pip install -r requirements.txt 
-#EXPOSE 8080
-#CMD python app.py
+# Usar uma imagem oficial do Python
+FROM python:3.9-slim
 
+# Criar o usuário 1001 e configurar permissões
+RUN useradd -m -u 1001 flaskuser
 
-FROM alpine:latest
-RUN apk add --no-cache py3-pip \
-    && pip3 install --upgrade pip
-USER 0
+# Definir o diretório de trabalho
 WORKDIR /app
+
+# Copiar os arquivos da aplicação para o contêiner
 COPY . /app
-RUN chown -R 1001:0 ./
+
+# Alterar o proprietário para o usuário 1001
+RUN chown -R flaskuser:flaskuser /app
+
+# Alternar para o usuário 1001
 USER 1001
-RUN pip3 --no-cache-dir install -r requirements.txt
+
+# Instalar dependências do Flask
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expor a porta que o Flask usará
 EXPOSE 8080
-ENTRYPOINT ["python3"]
-CMD ["app.py"]
+
+ENV MESSAGE="test"
+
+# Comando para rodar o Flask
+CMD ["python", "app.py"]
